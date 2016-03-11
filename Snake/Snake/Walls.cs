@@ -38,7 +38,7 @@ namespace Snake
                 wall.Draw();
             }
 
-            Console.BackgroundColor = ConsoleColor.White;
+            Console.BackgroundColor = ConsoleColor.Black;
             
         }
     }
