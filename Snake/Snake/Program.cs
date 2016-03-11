@@ -10,13 +10,8 @@ namespace Snake
     {
         static void Main(string[] args)
         {
+            Console.SetBufferSize(80,25);
             
-            Point p1 = new Point(3,5,'&' );
-            //p1.Draw();
-
-            Point p2 = new Point(10, 2, '^');
-            //p2.Draw();
-
             Walls walls = new Walls(80,25);
             walls.Draw();
             Point p = new Point(10,10,'*');
