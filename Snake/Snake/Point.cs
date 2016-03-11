@@ -61,5 +61,16 @@ namespace Snake
         {
             return x + "," + y + ", " + sym;
         }
+
+        internal void Clear()
+        {
+            //throw new NotImplementedException();
+            /*
+            Console.SetCursorPosition(x, y);
+            Console.Write(' ');
+            */
+            sym = ' ';
+            Draw();
+        }
     }
 }
