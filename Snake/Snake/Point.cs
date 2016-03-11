@@ -31,7 +31,7 @@ namespace Snake
             {
                 case Direction.DOWN:
                 {
-                    y -= offset;
+                    y += offset;
                     break;
                 }
                 case Direction.LEFT:
@@ -46,7 +46,7 @@ namespace Snake
                 }
                 case Direction.UP:
                 {
-                    y += offset;
+                    y -= offset;
                     break;
                 }
             }
