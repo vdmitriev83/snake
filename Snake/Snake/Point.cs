@@ -25,6 +25,11 @@ namespace Snake
             sym = p.sym;
         }
 
+        public bool IsHit(Point p)
+        {
+            return p.x == x && p.y == y;
+        }
+
         public void Move(int offset, Direction dir)
         {
             switch (dir)
@@ -51,6 +56,7 @@ namespace Snake
                 }
             }
         }
+
         public void Draw()
         {
             Console.SetCursorPosition(x, y);
