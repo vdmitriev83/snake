@@ -36,5 +36,15 @@ namespace Snake
             }
 
         }
+
+        internal bool IsHit(Figure figure)
+        {
+            return pList.Any(p => figure.IsHit(p));
+        }
+
+        private bool IsHit(Point point)
+        {
+            return pList.Any(p => point.IsHit(p));
+        }
     }
 }

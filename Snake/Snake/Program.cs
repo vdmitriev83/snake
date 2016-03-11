@@ -17,15 +17,8 @@ namespace Snake
             Point p2 = new Point(10, 2, '^');
             //p2.Draw();
 
-            HorisontalLine upLine = new HorisontalLine(0,78,0,'+');
-            HorisontalLine downLine = new HorisontalLine(0, 78, 24, '+');
-            VerticalLine leftLine = new VerticalLine(0,24,0,'+');
-            VerticalLine rightLine = new VerticalLine(0, 24, 78, '+');
-            upLine.Draw();
-            downLine.Draw();
-            leftLine.Draw();
-            rightLine.Draw();
-
+            Walls walls = new Walls(80,25);
+            walls.Draw();
             Point p = new Point(10,10,'*');
             Snake snake = new Snake(p,4,Direction.RIGHT);
             snake.Draw();
@@ -36,6 +29,11 @@ namespace Snake
 
             while (true)
             {
+                if (walls.IsHit(snake) || snake.IsHitTail())
+                {
+                    break;
+                }
+
                 if (snake.Eat(food))
                 {
                     food = foodCreator.CreateFood(snake);
@@ -44,6 +42,7 @@ namespace Snake
                 }
                 else
                 {
+                    food.Draw();
                     snake.Move();
                 }
 
