@@ -16,5 +16,25 @@ namespace Snake
                 p.Draw();
             }
         }
+
+        internal bool Consist(Point f)
+        {
+            if (pList == null)
+            {
+                return false;
+            }
+            else
+            {
+                if (pList.Any(p => p.IsHit(f)))
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+
+        }
     }
 }
