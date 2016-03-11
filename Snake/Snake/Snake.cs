@@ -20,6 +20,18 @@ namespace Snake
             }
         }
 
+        public Direction Direction
+        {
+            get
+            {
+                return this.direction;
+            }
+            set
+            {
+                this.direction = value;
+            }
+        }
+
         internal void Move()
         {
             Point tail = pList.First();
@@ -38,5 +50,18 @@ namespace Snake
             nextPoint.Move(1,direction);
             return nextPoint;
         }
+
+        public void HandleKey(ConsoleKey key)
+        {
+            if (key == ConsoleKey.LeftArrow && direction != Direction.RIGHT)
+                direction = Direction.LEFT;
+            else if (key == ConsoleKey.RightArrow && direction != Direction.LEFT)
+                direction = Direction.RIGHT;
+            else if (key == ConsoleKey.UpArrow && direction != Direction.DOWN)
+                direction = Direction.UP;
+            else if (key == ConsoleKey.DownArrow && direction != Direction.UP)
+                direction = Direction.DOWN;
+        }
+
     }
 }
